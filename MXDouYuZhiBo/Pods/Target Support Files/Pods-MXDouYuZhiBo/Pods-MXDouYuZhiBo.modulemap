@@ -1,0 +1,6 @@
+framework module Pods_MXDouYuZhiBo {
+  umbrella header "Pods-MXDouYuZhiBo-umbrella.h"
+
+  export *
+  module * { export * }
+}
