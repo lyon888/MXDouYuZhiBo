@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
 import Alamofire
 
 enum MethodType {
-    case GET
-    case POST
+    case get
+    case post
 }
 
 class MXNetWorkTool: NSObject {
@@ -24,7 +23,7 @@ extension MXNetWorkTool{
     class func requestData(type : MethodType , urlString : String , parameters : [String : AnyObject],finishedCallback : @escaping (_ result : AnyObject) -> ()) {
         
         //判断请求方式
-        let method = type == .GET ? Alamofire.HTTPMethod.get : Alamofire.HTTPMethod.post
+        let method = type == .get ? Alamofire.HTTPMethod.get : Alamofire.HTTPMethod.post
         
 
         // 2.发送网络请求
@@ -32,7 +31,7 @@ extension MXNetWorkTool{
             
             // 3.获取结果
             guard let result = response.result.value else {
-                print(response.result.error)
+                print(response.result.error!)
                 return
             }
             
