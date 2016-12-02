@@ -13,7 +13,7 @@ private let kHeaderViewID = "kHeaderViewID"
 private let kPrettyCellID = "kPrettyCellID"
 
 private let kItemMargin : CGFloat = 10
-private let kItemW : CGFloat = (kScreenWidth - 3 * kItemMargin) / 2
+private let kItemW : CGFloat = (kDeviceWidth - 3 * kItemMargin) / 2
 private let kNormalItemH : CGFloat = kItemW * 3 / 4
 private let kPrettyItemH : CGFloat = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50
@@ -31,7 +31,7 @@ class MXRecommendViewController: UIViewController {
         layout.itemSize = CGSize(width: kItemW, height: kNormalItemH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = kItemMargin
-        layout.headerReferenceSize = CGSize(width: kScreenWidth, height: kHeaderViewH)
+        layout.headerReferenceSize = CGSize(width: kDeviceWidth, height: kHeaderViewH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: kItemMargin, bottom: 0, right: kItemMargin)
         // 2.创建UICollectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
@@ -68,6 +68,9 @@ extension MXRecommendViewController {
         recommendVM.requestData {
             print(self.recommendVM.anchorGroups)
             self.collectionView.reloadData()
+        }
+        recommendVM.requestCycleData {
+            
         }
     }
 }

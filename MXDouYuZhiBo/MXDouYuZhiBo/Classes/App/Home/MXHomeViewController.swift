@@ -14,7 +14,7 @@ class MXHomeViewController: UIViewController {
     
     // MARK:- 懒加载属性
     fileprivate lazy var pageTitleView : MXPageTitleView = {[weak self] in
-        let titleFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight), size: CGSize(width: kScreenWidth, height: kTitleViewH))
+        let titleFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight), size: CGSize(width: kDeviceWidth, height: kTitleViewH))
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = MXPageTitleView(frame: titleFrame, titles: titles)
         titleView.backgroundColor = UIColor.red
@@ -22,10 +22,19 @@ class MXHomeViewController: UIViewController {
         return titleView
         }()
     
+    fileprivate lazy var cycleCollectionView : MXCycleCollectionView = {[weak self] in
+        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH), size: CGSize(width: kDeviceWidth, height: 150))
+        
+        let cycleCollectionView = MXCycleCollectionView(frame: cycleCollectionViewFrame)
+        cycleCollectionView.backgroundColor = UIColor.red
+//        cycleCollectionView.delegate = self
+        return cycleCollectionView
+        }()
+    
     fileprivate lazy var pageContentView : MXPageContentView = {[weak self] in
         // 1.确定内容的frame
-        let contentH = kScreenHeight - kStatusBarHeight - kNavigationBarHeight - kTitleViewH - kTabbarHeight
-        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH, width: kScreenWidth, height: contentH)
+        let contentH = kDeviceHeight - kStatusBarHeight - kNavigationBarHeight - kTitleViewH - kTabbarHeight
+        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH + 150, width: kDeviceWidth, height: contentH)
         
         // 2.确定所有的子控制器
         var childVcs = [UIViewController]()
@@ -42,10 +51,50 @@ class MXHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //设置UI
+    
         setupUI()
     }
 }
+
+// MARK:- UI Frame
+extension MXHomeViewController {
+    
+    fileprivate func setupUI(){
+        automaticallyAdjustsScrollViewInsets = false
+        setupNavigationBar()
+        setupContentView()
+    }
+    
+    fileprivate func setupNavigationBar(){
+        setupNavigationLeftBar()
+        setupNavigationRightBar()
+    }
+    
+    fileprivate func setupContentView(){
+        view.addSubview(pageTitleView)
+        view.addSubview(cycleCollectionView)
+        view.addSubview(pageContentView)
+    }
+    
+    fileprivate func setupNavigationLeftBar() {
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem(imageName: "logo", target: self, action: #selector(self.leftItemClick))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo", target: self, action: #selector(self.leftItemClick))
+    }
+    fileprivate func setupNavigationRightBar() {
+        //        let size = CGSize(width: 40, height: 44)
+        //        let historyItem = UIBarButtonItem.createBarButtonItem(imageName: "image_my_history", highImageName: "image_my_history_click", size: size, target: self, action: #selector(self.historyItemClick))
+        //        let searchItem = UIBarButtonItem.createBarButtonItem(imageName: "btn_search", highImageName: "btn_search_click", size: size, target: self, action: #selector(self.searchItemClick))
+        //        let qrCodeItem = UIBarButtonItem.createBarButtonItem(imageName: "image_scan", highImageName: "image_scan_click", size: size, target: self, action: #selector(self.qrCodeItemClick))
+        //        navigationItem.rightBarButtonItems = [historyItem, searchItem , qrCodeItem]
+        let size = CGSize(width: 40, height: 44)
+        let historyItem = UIBarButtonItem(imageName: "image_my_history", highImageName: "image_my_history_click", size: size, target: self, action: #selector(self.historyItemClick))
+        let searchItem = UIBarButtonItem(imageName: "btn_search", highImageName: "btn_search_click", size: size, target: self, action: #selector(self.searchItemClick))
+        let qrCodeItem = UIBarButtonItem(imageName: "image_scan", highImageName: "image_scan_click", size: size, target: self, action: #selector(self.qrCodeItemClick))
+        navigationItem.rightBarButtonItems = [historyItem, searchItem , qrCodeItem]
+    }
+}
+
+
 
 // MARK:- 遵守PageTitleViewDelegate协议
 extension MXHomeViewController : MXPageTitleViewDelegate{
@@ -76,43 +125,6 @@ extension MXHomeViewController{
         print("点击了历史")
     }
 }
-// MARK:- UI Frame
-extension MXHomeViewController {
-    
-    fileprivate func setupUI(){
-        automaticallyAdjustsScrollViewInsets = false
-        setupNavigationBar()
-        setupContentView()
-    }
-    
-    fileprivate func setupNavigationBar(){
-        setupNavigationLeftBar()
-        setupNavigationRightBar()
-    }
-    
-    fileprivate func setupContentView(){
-        view.addSubview(pageTitleView)
-        view.addSubview(pageContentView)
-    }
-    
-    fileprivate func setupNavigationLeftBar() {
-        //        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem(imageName: "logo", target: self, action: #selector(self.leftItemClick))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo", target: self, action: #selector(self.leftItemClick))
-    }
-    fileprivate func setupNavigationRightBar() {
-        //        let size = CGSize(width: 40, height: 44)
-        //        let historyItem = UIBarButtonItem.createBarButtonItem(imageName: "image_my_history", highImageName: "image_my_history_click", size: size, target: self, action: #selector(self.historyItemClick))
-        //        let searchItem = UIBarButtonItem.createBarButtonItem(imageName: "btn_search", highImageName: "btn_search_click", size: size, target: self, action: #selector(self.searchItemClick))
-        //        let qrCodeItem = UIBarButtonItem.createBarButtonItem(imageName: "image_scan", highImageName: "image_scan_click", size: size, target: self, action: #selector(self.qrCodeItemClick))
-        //        navigationItem.rightBarButtonItems = [historyItem, searchItem , qrCodeItem]
-        let size = CGSize(width: 40, height: 44)
-        let historyItem = UIBarButtonItem(imageName: "image_my_history", highImageName: "image_my_history_click", size: size, target: self, action: #selector(self.historyItemClick))
-        let searchItem = UIBarButtonItem(imageName: "btn_search", highImageName: "btn_search_click", size: size, target: self, action: #selector(self.searchItemClick))
-        let qrCodeItem = UIBarButtonItem(imageName: "image_scan", highImageName: "image_scan_click", size: size, target: self, action: #selector(self.qrCodeItemClick))
-        navigationItem.rightBarButtonItems = [historyItem, searchItem , qrCodeItem]
-    }
-}
-
 
 // MARK:- Private Method
 //系统类扩充方法

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19572F3B1DF14EF500E342A7 /* MXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F3A1DF14EF500E342A7 /* MXConstant.swift */; };
+		19572F481DF1683F00E342A7 /* MXCycleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F451DF1683F00E342A7 /* MXCycleCollectionView.swift */; };
+		19572F491DF1683F00E342A7 /* MXCycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F461DF1683F00E342A7 /* MXCycleCollectionViewCell.swift */; };
+		19572F4A1DF1683F00E342A7 /* MXCycleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19572F471DF1683F00E342A7 /* MXCycleCollectionViewCell.xib */; };
+		19572F4E1DF174E700E342A7 /* MXCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F4D1DF174E700E342A7 /* MXCycleModel.swift */; };
 		B102DADB1DC1B63F00A3B0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102DADA1DC1B63F00A3B0F3 /* AppDelegate.swift */; };
 		B102DAE01DC1B63F00A3B0F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B102DADE1DC1B63F00A3B0F3 /* Main.storyboard */; };
 		B102DAE21DC1B63F00A3B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B102DAE11DC1B63F00A3B0F3 /* Assets.xcassets */; };
@@ -15,7 +20,6 @@
 		B102DAFB1DC1B64000A3B0F3 /* MXDouYuZhiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102DAFA1DC1B64000A3B0F3 /* MXDouYuZhiBoUITests.swift */; };
 		B13F06551DC4EA2100A0A1A1 /* MXRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F06541DC4EA2100A0A1A1 /* MXRecommendViewModel.swift */; };
 		B13F06581DC4EABB00A0A1A1 /* MXAnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F06571DC4EABB00A0A1A1 /* MXAnchorGroup.swift */; };
-		B1509B3C1DC24D480011B9E0 /* MXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1509B3B1DC24D480011B9E0 /* MXConstant.swift */; };
 		B18F1F511DC78C5300E291CA /* MXAnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F1F501DC78C5300E291CA /* MXAnchorModel.swift */; };
 		B1D0244D1DC3B475004EEA35 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D0242F1DC3B475004EEA35 /* Follow.storyboard */; };
 		B1D0244F1DC3B475004EEA35 /* MXFollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D024311DC3B475004EEA35 /* MXFollowViewController.swift */; };
@@ -60,6 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19572F3A1DF14EF500E342A7 /* MXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXConstant.swift; sourceTree = "<group>"; };
+		19572F451DF1683F00E342A7 /* MXCycleCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCycleCollectionView.swift; sourceTree = "<group>"; };
+		19572F461DF1683F00E342A7 /* MXCycleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCycleCollectionViewCell.swift; sourceTree = "<group>"; };
+		19572F471DF1683F00E342A7 /* MXCycleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXCycleCollectionViewCell.xib; sourceTree = "<group>"; };
+		19572F4D1DF174E700E342A7 /* MXCycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCycleModel.swift; sourceTree = "<group>"; };
 		21DA4DC447A832D6550AEC6A /* Pods_MXDouYuZhiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MXDouYuZhiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A8DE464622FFC0EC5395E3 /* Pods-MXDouYuZhiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXDouYuZhiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MXDouYuZhiBo/Pods-MXDouYuZhiBo.release.xcconfig"; sourceTree = "<group>"; };
 		B102DAD71DC1B63F00A3B0F3 /* MXDouYuZhiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXDouYuZhiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +85,6 @@
 		B102DAFC1DC1B64000A3B0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B13F06541DC4EA2100A0A1A1 /* MXRecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXRecommendViewModel.swift; sourceTree = "<group>"; };
 		B13F06571DC4EABB00A0A1A1 /* MXAnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAnchorGroup.swift; sourceTree = "<group>"; };
-		B1509B3B1DC24D480011B9E0 /* MXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXConstant.swift; sourceTree = "<group>"; };
 		B18F1F501DC78C5300E291CA /* MXAnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAnchorModel.swift; sourceTree = "<group>"; };
 		B1D0242F1DC3B475004EEA35 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		B1D024311DC3B475004EEA35 /* MXFollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXFollowViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +144,32 @@
 				93A8DE464622FFC0EC5395E3 /* Pods-MXDouYuZhiBo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		19572F391DF14EF500E342A7 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				19572F3A1DF14EF500E342A7 /* MXConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		19572F3C1DF14FC300E342A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19572F441DF1683F00E342A7 /* MXCycleCollectionView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19572F441DF1683F00E342A7 /* MXCycleCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				19572F451DF1683F00E342A7 /* MXCycleCollectionView.swift */,
+				19572F461DF1683F00E342A7 /* MXCycleCollectionViewCell.swift */,
+				19572F471DF1683F00E342A7 /* MXCycleCollectionViewCell.xib */,
+			);
+			path = MXCycleCollectionView;
 			sourceTree = "<group>";
 		};
 		20C9102835332125D389954B /* Frameworks */ = {
@@ -202,6 +236,8 @@
 		B102DB081DC1B80400A3B0F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				19572F3C1DF14FC300E342A7 /* View */,
+				19572F391DF14EF500E342A7 /* Constant */,
 				B1D0242D1DC3B475004EEA35 /* App */,
 				B102DB0E1DC1B80400A3B0F3 /* Tool */,
 			);
@@ -212,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				B1D024661DC3B609004EEA35 /* NetWork */,
-				B1509B3B1DC24D480011B9E0 /* MXConstant.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -230,6 +265,7 @@
 			children = (
 				B13F06571DC4EABB00A0A1A1 /* MXAnchorGroup.swift */,
 				B18F1F501DC78C5300E291CA /* MXAnchorModel.swift */,
+				19572F4D1DF174E700E342A7 /* MXCycleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,6 +488,7 @@
 				B1D024501DC3B475004EEA35 /* Home.storyboard in Resources */,
 				B1D0244D1DC3B475004EEA35 /* Follow.storyboard in Resources */,
 				B1D024631DC3B475004EEA35 /* Profile.storyboard in Resources */,
+				19572F4A1DF1683F00E342A7 /* MXCycleCollectionViewCell.xib in Resources */,
 				B1D024591DC3B475004EEA35 /* CollectionNormalCell.xib in Resources */,
 				B1D0245B1DC3B475004EEA35 /* CollectionPrettyCell.xib in Resources */,
 				B1D0245C1DC3B475004EEA35 /* Live.storyboard in Resources */,
@@ -530,22 +567,25 @@
 				B1D024561DC3B475004EEA35 /* CollectionHeaderView.swift in Sources */,
 				B1D024551DC3B475004EEA35 /* MXRecommendViewController.swift in Sources */,
 				B13F06551DC4EA2100A0A1A1 /* MXRecommendViewModel.swift in Sources */,
-				B1509B3C1DC24D480011B9E0 /* MXConstant.swift in Sources */,
 				B1D024531DC3B475004EEA35 /* MXGameViewController.swift in Sources */,
 				B1D024581DC3B475004EEA35 /* CollectionNormalCell.swift in Sources */,
 				B1D0245E1DC3B475004EEA35 /* MXLiveViewController.swift in Sources */,
 				B1D0245A1DC3B475004EEA35 /* CollectionPrettyCell.swift in Sources */,
 				B1D024511DC3B475004EEA35 /* MXAmuseViewController.swift in Sources */,
+				19572F4E1DF174E700E342A7 /* MXCycleModel.swift in Sources */,
 				B102DADB1DC1B63F00A3B0F3 /* AppDelegate.swift in Sources */,
+				19572F481DF1683F00E342A7 /* MXCycleCollectionView.swift in Sources */,
 				B1D0244F1DC3B475004EEA35 /* MXFollowViewController.swift in Sources */,
 				B1D024681DC3B628004EEA35 /* MXNetWorkTool.swift in Sources */,
 				B1D024601DC3B475004EEA35 /* MXPageContentView.swift in Sources */,
 				B1D024541DC3B475004EEA35 /* MXHomeViewController.swift in Sources */,
 				B1D024611DC3B475004EEA35 /* MXPageTitleView.swift in Sources */,
 				B1D024621DC3B475004EEA35 /* MXProfileViewController.swift in Sources */,
+				19572F491DF1683F00E342A7 /* MXCycleCollectionViewCell.swift in Sources */,
 				B13F06581DC4EABB00A0A1A1 /* MXAnchorGroup.swift in Sources */,
 				B1D0245F1DC3B475004EEA35 /* MXMainViewController.swift in Sources */,
 				B1D024521DC3B475004EEA35 /* MXFunnyViewController.swift in Sources */,
+				19572F3B1DF14EF500E342A7 /* MXConstant.swift in Sources */,
 				B18F1F511DC78C5300E291CA /* MXAnchorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
