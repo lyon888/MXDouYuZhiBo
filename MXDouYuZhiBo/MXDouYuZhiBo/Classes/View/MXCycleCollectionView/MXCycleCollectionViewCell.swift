@@ -10,10 +10,22 @@ import UIKit
 
 class MXCycleCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - 定义属性
+    var cycleModel : MXCycleModel?{
+        didSet{
+            guard let iconURL = URL(string: cycleModel?.pic_url ?? "") else {
+                return
+            }
+            bannerImageView.kf.setImage(with: iconURL)
+            bannerTitleLabel.text = cycleModel?.title
+        }
+    }
+    
     @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var bannerTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+     
     }
 }

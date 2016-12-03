@@ -12,6 +12,9 @@
 		19572F491DF1683F00E342A7 /* MXCycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F461DF1683F00E342A7 /* MXCycleCollectionViewCell.swift */; };
 		19572F4A1DF1683F00E342A7 /* MXCycleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19572F471DF1683F00E342A7 /* MXCycleCollectionViewCell.xib */; };
 		19572F4E1DF174E700E342A7 /* MXCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19572F4D1DF174E700E342A7 /* MXCycleModel.swift */; };
+		19E8AACD1DF2C8F300AE5290 /* MXGameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8AACC1DF2C8F300AE5290 /* MXGameCollectionView.swift */; };
+		19E8AAD01DF2CB4900AE5290 /* MXGameCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8AACE1DF2CB4900AE5290 /* MXGameCollectionCell.swift */; };
+		19E8AAD11DF2CB4900AE5290 /* MXGameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E8AACF1DF2CB4900AE5290 /* MXGameCollectionCell.xib */; };
 		B102DADB1DC1B63F00A3B0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102DADA1DC1B63F00A3B0F3 /* AppDelegate.swift */; };
 		B102DAE01DC1B63F00A3B0F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B102DADE1DC1B63F00A3B0F3 /* Main.storyboard */; };
 		B102DAE21DC1B63F00A3B0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B102DAE11DC1B63F00A3B0F3 /* Assets.xcassets */; };
@@ -69,6 +72,9 @@
 		19572F461DF1683F00E342A7 /* MXCycleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCycleCollectionViewCell.swift; sourceTree = "<group>"; };
 		19572F471DF1683F00E342A7 /* MXCycleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXCycleCollectionViewCell.xib; sourceTree = "<group>"; };
 		19572F4D1DF174E700E342A7 /* MXCycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCycleModel.swift; sourceTree = "<group>"; };
+		19E8AACC1DF2C8F300AE5290 /* MXGameCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameCollectionView.swift; sourceTree = "<group>"; };
+		19E8AACE1DF2CB4900AE5290 /* MXGameCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameCollectionCell.swift; sourceTree = "<group>"; };
+		19E8AACF1DF2CB4900AE5290 /* MXGameCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXGameCollectionCell.xib; sourceTree = "<group>"; };
 		21DA4DC447A832D6550AEC6A /* Pods_MXDouYuZhiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MXDouYuZhiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A8DE464622FFC0EC5395E3 /* Pods-MXDouYuZhiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXDouYuZhiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MXDouYuZhiBo/Pods-MXDouYuZhiBo.release.xcconfig"; sourceTree = "<group>"; };
 		B102DAD71DC1B63F00A3B0F3 /* MXDouYuZhiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXDouYuZhiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +322,9 @@
 				B1D0243D1DC3B475004EEA35 /* CollectionNormalCell.xib */,
 				B1D0243E1DC3B475004EEA35 /* CollectionPrettyCell.swift */,
 				B1D0243F1DC3B475004EEA35 /* CollectionPrettyCell.xib */,
+				19E8AACC1DF2C8F300AE5290 /* MXGameCollectionView.swift */,
+				19E8AACE1DF2CB4900AE5290 /* MXGameCollectionCell.swift */,
+				19E8AACF1DF2CB4900AE5290 /* MXGameCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +494,7 @@
 				B102DAE21DC1B63F00A3B0F3 /* Assets.xcassets in Resources */,
 				B102DAE01DC1B63F00A3B0F3 /* Main.storyboard in Resources */,
 				B1D024571DC3B475004EEA35 /* CollectionHeaderView.xib in Resources */,
+				19E8AAD11DF2CB4900AE5290 /* MXGameCollectionCell.xib in Resources */,
 				B1D024501DC3B475004EEA35 /* Home.storyboard in Resources */,
 				B1D0244D1DC3B475004EEA35 /* Follow.storyboard in Resources */,
 				B1D024631DC3B475004EEA35 /* Profile.storyboard in Resources */,
@@ -583,6 +593,8 @@
 				B1D024621DC3B475004EEA35 /* MXProfileViewController.swift in Sources */,
 				19572F491DF1683F00E342A7 /* MXCycleCollectionViewCell.swift in Sources */,
 				B13F06581DC4EABB00A0A1A1 /* MXAnchorGroup.swift in Sources */,
+				19E8AAD01DF2CB4900AE5290 /* MXGameCollectionCell.swift in Sources */,
+				19E8AACD1DF2C8F300AE5290 /* MXGameCollectionView.swift in Sources */,
 				B1D0245F1DC3B475004EEA35 /* MXMainViewController.swift in Sources */,
 				B1D024521DC3B475004EEA35 /* MXFunnyViewController.swift in Sources */,
 				19572F3B1DF14EF500E342A7 /* MXConstant.swift in Sources */,

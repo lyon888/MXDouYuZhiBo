@@ -22,19 +22,10 @@ class MXHomeViewController: UIViewController {
         return titleView
         }()
     
-    fileprivate lazy var cycleCollectionView : MXCycleCollectionView = {[weak self] in
-        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH), size: CGSize(width: kDeviceWidth, height: 150))
-        
-        let cycleCollectionView = MXCycleCollectionView(frame: cycleCollectionViewFrame)
-        cycleCollectionView.backgroundColor = UIColor.red
-//        cycleCollectionView.delegate = self
-        return cycleCollectionView
-        }()
-    
     fileprivate lazy var pageContentView : MXPageContentView = {[weak self] in
         // 1.确定内容的frame
         let contentH = kDeviceHeight - kStatusBarHeight - kNavigationBarHeight - kTitleViewH - kTabbarHeight
-        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH + 150, width: kDeviceWidth, height: contentH)
+        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH, width: kDeviceWidth, height: contentH)
         
         // 2.确定所有的子控制器
         var childVcs = [UIViewController]()
@@ -53,6 +44,7 @@ class MXHomeViewController: UIViewController {
         super.viewDidLoad()
     
         setupUI()
+        
     }
 }
 
@@ -72,7 +64,6 @@ extension MXHomeViewController {
     
     fileprivate func setupContentView(){
         view.addSubview(pageTitleView)
-        view.addSubview(cycleCollectionView)
         view.addSubview(pageContentView)
     }
     
@@ -113,16 +104,16 @@ extension MXHomeViewController : PageContentViewDelegate {
 // MARK:- Event Response
 extension MXHomeViewController{
     @objc fileprivate func leftItemClick(){
-        print("点击了logo")
+        MXPrint(message: "点击了logo")
     }
     @objc fileprivate func qrCodeItemClick() {
-        print("点击了二维码")
+        MXPrint(message: "点击了二维码")
     }
     @objc fileprivate func searchItemClick() {
-        print("点击了搜索")
+        MXPrint(message: "点击了搜索")
     }
     @objc fileprivate func historyItemClick() {
-        print("点击了历史")
+        MXPrint(message: "点击了历史")
     }
 }
 

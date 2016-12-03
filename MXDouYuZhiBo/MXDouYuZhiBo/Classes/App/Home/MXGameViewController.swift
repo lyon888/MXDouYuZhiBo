@@ -14,6 +14,4 @@ class MXGameViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow
     }
-
-
 }

@@ -11,6 +11,7 @@ import UIKit
 class MXRecommendViewModel: NSObject {
     // MARK:- 懒加载属性
     lazy var anchorGroups = [MXAnchorGroup]()
+    lazy var cycleModels  = [MXCycleModel]()
     fileprivate lazy var bigDataGroup : MXAnchorGroup = MXAnchorGroup()
     fileprivate lazy var prettyGroup  : MXAnchorGroup = MXAnchorGroup()
 }
@@ -84,9 +85,7 @@ extension MXRecommendViewModel {
 //           
 //        }
         MXNetWorkTool.requestData(type: .get, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters as [String : AnyObject]) { (result) in
-            
-//            print(result)
-//            print("+++++++++++++++++++!+++++++++33333333");
+ 
             
             // 1.对界面进行处理
             guard let resultDict = result as? [String : Any] else { return }
@@ -133,12 +132,10 @@ extension MXRecommendViewModel {
             
             // 2.根据data的key获取数据
             guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
-            print(dataArray)
-            print("+++++++++++++++++++!+++++++++33333333");
-            
+        
             // 3.字典转模型对象
             for dict in dataArray {
-//                self.cycleModels.append(CycleModel(dict: dict))
+                self.cycleModels.append(MXCycleModel(dict: dict))
             }
             
             finishCallback()

@@ -12,19 +12,33 @@ private let kNormalCellID = "kNormalCellID"
 private let kHeaderViewID = "kHeaderViewID"
 private let kPrettyCellID = "kPrettyCellID"
 
-private let kItemMargin : CGFloat = 10
-private let kItemW : CGFloat = (kDeviceWidth - 3 * kItemMargin) / 2
+private let kItemMargin  : CGFloat = 10
+private let kItemW       : CGFloat = (kDeviceWidth - 3 * kItemMargin) / 2
 private let kNormalItemH : CGFloat = kItemW * 3 / 4
 private let kPrettyItemH : CGFloat = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50
+private let kCycleViewH  : CGFloat = 150
+private let kGameViewH   : CGFloat = 90
 
 class MXRecommendViewController: UIViewController {
     
-    // MARK:- 属性
-    //    fileprivate var headView : UICollectionReusableView = UICollectionReusableView()
-    
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : MXRecommendViewModel = MXRecommendViewModel()
+    
+    fileprivate lazy var cycleCollectionView : MXCycleCollectionView = {[weak self] in
+        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kCycleViewH-kGameViewH), size: CGSize(width: kDeviceWidth, height: kCycleViewH))
+        let cycleCollectionView = MXCycleCollectionView(frame: cycleCollectionViewFrame)
+        //        cycleCollectionView.delegate = self
+        return cycleCollectionView
+        }()
+    
+    fileprivate lazy var gameCollectionView : MXGameCollectionView = {[weak self] in
+        let gameCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH), size: CGSize(width: kDeviceWidth, height: kGameViewH))
+        let gameCollectionView = MXGameCollectionView(frame: gameCollectionViewFrame)
+        gameCollectionView.backgroundColor = UIColor.white
+        return gameCollectionView
+        }()
+    
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         // 1.创建布局
         let layout = UICollectionViewFlowLayout()
@@ -36,9 +50,9 @@ class MXRecommendViewController: UIViewController {
         // 2.创建UICollectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        //        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
+        collectionView.dataSource   = self
+        collectionView.delegate     = self
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH+kGameViewH, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
@@ -59,6 +73,8 @@ class MXRecommendViewController: UIViewController {
 extension MXRecommendViewController {
     fileprivate func setupUI(){
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleCollectionView)
+        collectionView.addSubview(gameCollectionView)
     }
 }
 
@@ -66,11 +82,10 @@ extension MXRecommendViewController {
 extension MXRecommendViewController {
     fileprivate func requestDatas(){
         recommendVM.requestData {
-            print(self.recommendVM.anchorGroups)
             self.collectionView.reloadData()
         }
         recommendVM.requestCycleData {
-            
+            self.cycleCollectionView.cycleModels = self.recommendVM.cycleModels
         }
     }
 }
