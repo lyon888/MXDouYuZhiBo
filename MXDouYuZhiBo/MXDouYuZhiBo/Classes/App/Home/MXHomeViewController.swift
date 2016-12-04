@@ -14,7 +14,7 @@ class MXHomeViewController: UIViewController {
     
     // MARK:- 懒加载属性
     fileprivate lazy var pageTitleView : MXPageTitleView = {[weak self] in
-        let titleFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight), size: CGSize(width: kScreenWidth, height: kTitleViewH))
+        let titleFrame = CGRect(origin: CGPoint(x: 0, y: kStatusBarHeight + kNavigationBarHeight), size: CGSize(width: kDeviceWidth, height: kTitleViewH))
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = MXPageTitleView(frame: titleFrame, titles: titles)
         titleView.backgroundColor = UIColor.red
@@ -24,8 +24,8 @@ class MXHomeViewController: UIViewController {
     
     fileprivate lazy var pageContentView : MXPageContentView = {[weak self] in
         // 1.确定内容的frame
-        let contentH = kScreenHeight - kStatusBarHeight - kNavigationBarHeight - kTitleViewH - kTabbarHeight
-        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH, width: kScreenWidth, height: contentH)
+        let contentH = kDeviceHeight - kStatusBarHeight - kNavigationBarHeight - kTitleViewH - kTabbarHeight
+        let contentFrame = CGRect(x: 0, y: kStatusBarHeight + kNavigationBarHeight + kTitleViewH, width: kDeviceWidth, height: contentH)
         
         // 2.确定所有的子控制器
         var childVcs = [UIViewController]()
@@ -42,40 +42,12 @@ class MXHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //设置UI
+    
         setupUI()
+        
     }
 }
 
-// MARK:- 遵守PageTitleViewDelegate协议
-extension MXHomeViewController : MXPageTitleViewDelegate{
-    func pageTitleView(_ titleView: MXPageTitleView, selectedIndex index: Int) {
-        pageContentView.setCurrentIndex(index)
-    }
-}
-
-// MARK:- 遵守PageContentViewDelegate协议
-extension MXHomeViewController : PageContentViewDelegate {
-    func pageContentView(_ contentView: MXPageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
-    }
-}
-
-// MARK:- Event Response
-extension MXHomeViewController{
-    @objc fileprivate func leftItemClick(){
-        print("点击了logo")
-    }
-    @objc fileprivate func qrCodeItemClick() {
-        print("点击了二维码")
-    }
-    @objc fileprivate func searchItemClick() {
-        print("点击了搜索")
-    }
-    @objc fileprivate func historyItemClick() {
-        print("点击了历史")
-    }
-}
 // MARK:- UI Frame
 extension MXHomeViewController {
     
@@ -113,6 +85,37 @@ extension MXHomeViewController {
     }
 }
 
+
+
+// MARK:- 遵守PageTitleViewDelegate协议
+extension MXHomeViewController : MXPageTitleViewDelegate{
+    func pageTitleView(_ titleView: MXPageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(index)
+    }
+}
+
+// MARK:- 遵守PageContentViewDelegate协议
+extension MXHomeViewController : PageContentViewDelegate {
+    func pageContentView(_ contentView: MXPageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
+
+// MARK:- Event Response
+extension MXHomeViewController{
+    @objc fileprivate func leftItemClick(){
+        MXPrint(message: "点击了logo")
+    }
+    @objc fileprivate func qrCodeItemClick() {
+        MXPrint(message: "点击了二维码")
+    }
+    @objc fileprivate func searchItemClick() {
+        MXPrint(message: "点击了搜索")
+    }
+    @objc fileprivate func historyItemClick() {
+        MXPrint(message: "点击了历史")
+    }
+}
 
 // MARK:- Private Method
 //系统类扩充方法
