@@ -91,7 +91,6 @@ extension MXRecommendViewModel {
             guard let resultDict = result as? [String : Any] else { return }
             guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
-            
             // 2.判断是否分组数据
             if true {
                 // 2.1.遍历数组中的字典
@@ -117,6 +116,8 @@ extension MXRecommendViewModel {
         
         //6.所有的数据都请求到,之后进行排序
         dGroup.notify(queue: DispatchQueue.main) {
+            
+            
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.bigDataGroup, at: 0)
             

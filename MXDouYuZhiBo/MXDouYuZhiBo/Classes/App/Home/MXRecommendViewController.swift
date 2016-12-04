@@ -24,6 +24,7 @@ private let kGameViewH   : CGFloat = 90
 
 class MXRecommendViewController: UIViewController {
     
+    
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : MXRecommendViewModel = MXRecommendViewModel()
     
@@ -86,7 +87,17 @@ extension MXRecommendViewController {
 extension MXRecommendViewController {
     fileprivate func requestDatas(){
         recommendVM.requestData {
+            
             self.collectionView.reloadData()
+            
+            var groups = self.recommendVM.anchorGroups
+            groups.removeFirst()
+            groups.removeFirst()
+            let moreGroup = MXAnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            self.gameCollectionView.anchorGroups = groups
+            
         }
         recommendVM.requestCycleData {
             self.cycleCollectionView.cycleModels = self.recommendVM.cycleModels
@@ -145,6 +156,4 @@ extension MXRecommendViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: kItemW, height: kNormalItemH)
     }
 }
-
-
 

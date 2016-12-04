@@ -40,6 +40,7 @@ class MXCycleCollectionView: UIView {
         collectionView.dataSource                       = self as UICollectionViewDataSource?
         collectionView.isPagingEnabled                  = true
         collectionView.showsHorizontalScrollIndicator   = false
+        collectionView.backgroundColor                  = UIColor.white
         collectionView.register(UINib.init(nibName: "MXCycleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCycleCollectionCell)
         return collectionView
     }()
@@ -84,10 +85,10 @@ extension MXCycleCollectionView : UICollectionViewDataSource{
         return (cycleModels?.count ?? 0) * 10000//kMaxSectionNumber
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if cycleModels?.count != 0 && cycleModels?.count != nil {
-            return cycleModels!.count
-        }
-        return 0
+//        if cycleModels?.count != 0 && cycleModels?.count != nil {
+            return cycleModels?.count ?? 0
+//        }
+//        return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCollectionCell, for: indexPath) as! MXCycleCollectionViewCell

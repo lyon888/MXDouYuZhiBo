@@ -24,11 +24,10 @@ extension MXNetWorkTool{
         
         //判断请求方式
         let method = type == .get ? Alamofire.HTTPMethod.get : Alamofire.HTTPMethod.post
-        
 
         // 2.发送网络请求
         Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (response) in
-            
+            MXPrint(message: response)
             // 3.获取结果
             guard let result = response.result.value else {
                 MXPrint(message: response.result.error!)

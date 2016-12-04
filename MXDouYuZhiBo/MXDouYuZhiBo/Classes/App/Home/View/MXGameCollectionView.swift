@@ -12,6 +12,12 @@ let kGameCollectionCell : String = "kGameCollectionCell"
 
 class MXGameCollectionView: UIView {
     
+    // MARK:- 属性
+    var anchorGroups : [MXAnchorGroup]?{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     // MARK: - Lazy
     fileprivate lazy var collectionView : UICollectionView = {[weak self] in
         let flowLayout = UICollectionViewFlowLayout()
@@ -21,10 +27,11 @@ class MXGameCollectionView: UIView {
         flowLayout.itemSize                 = CGSize.init(width: 80, height: 90)
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
-        collectionView.delegate                         = self as UICollectionViewDelegate?
+//        collectionView.delegate                         = self as UICollectionViewDelegate?
         collectionView.dataSource                       = self as UICollectionViewDataSource?
-        collectionView.isPagingEnabled                  = true
+//        collectionView.isPagingEnabled                  = true
         collectionView.showsHorizontalScrollIndicator   = false
+        collectionView.backgroundColor                  = UIColor.white
         collectionView.register(UINib.init(nibName: "MXGameCollectionCell", bundle: nil), forCellWithReuseIdentifier: kGameCollectionCell)
         return collectionView
         }()
@@ -57,18 +64,12 @@ extension MXGameCollectionView{
 // MARK: - UICollectionViewDataSource
 extension MXGameCollectionView : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3;
+        return anchorGroups?.count ?? 0;
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCollectionCell, for: indexPath) 
-        
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCollectionCell, for: indexPath) as! MXGameCollectionCell
+        cell.anchorGroup = anchorGroups?[indexPath.item]
         return cell
     }
-    
-}
-// MARK: - UICollectionViewDelegate
-extension MXGameCollectionView : UICollectionViewDelegate{
-
 }
 

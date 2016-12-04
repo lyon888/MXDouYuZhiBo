@@ -46,6 +46,9 @@
 		B1D024621DC3B475004EEA35 /* MXProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0244A1DC3B475004EEA35 /* MXProfileViewController.swift */; };
 		B1D024631DC3B475004EEA35 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D0244B1DC3B475004EEA35 /* Profile.storyboard */; };
 		B1D024681DC3B628004EEA35 /* MXNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D024671DC3B628004EEA35 /* MXNetWorkTool.swift */; };
+		B1FBAB6C1DF414BA0056EF44 /* MXGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBAB6B1DF414BA0056EF44 /* MXGameViewModel.swift */; };
+		B1FBAB6E1DF451260056EF44 /* MXGameHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */; };
+		B1FBAB701DF4512F0056EF44 /* MXGameHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */; };
 		BB0986D94CFC13B4EC51AD9D /* Pods_MXDouYuZhiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DA4DC447A832D6550AEC6A /* Pods_MXDouYuZhiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +117,9 @@
 		B1D0244A1DC3B475004EEA35 /* MXProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXProfileViewController.swift; sourceTree = "<group>"; };
 		B1D0244B1DC3B475004EEA35 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B1D024671DC3B628004EEA35 /* MXNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXNetWorkTool.swift; sourceTree = "<group>"; };
+		B1FBAB6B1DF414BA0056EF44 /* MXGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameViewModel.swift; sourceTree = "<group>"; };
+		B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameHeadView.swift; sourceTree = "<group>"; };
+		B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXGameHeadView.xib; sourceTree = "<group>"; };
 		F603FE982A75BF7DBFB1EA56 /* Pods-MXDouYuZhiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXDouYuZhiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MXDouYuZhiBo/Pods-MXDouYuZhiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				B13F06541DC4EA2100A0A1A1 /* MXRecommendViewModel.swift */,
+				B1FBAB6B1DF414BA0056EF44 /* MXGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +332,8 @@
 				19E8AACC1DF2C8F300AE5290 /* MXGameCollectionView.swift */,
 				19E8AACE1DF2CB4900AE5290 /* MXGameCollectionCell.swift */,
 				19E8AACF1DF2CB4900AE5290 /* MXGameCollectionCell.xib */,
+				B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */,
+				B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,6 +510,7 @@
 				19572F4A1DF1683F00E342A7 /* MXCycleCollectionViewCell.xib in Resources */,
 				B1D024591DC3B475004EEA35 /* CollectionNormalCell.xib in Resources */,
 				B1D0245B1DC3B475004EEA35 /* CollectionPrettyCell.xib in Resources */,
+				B1FBAB701DF4512F0056EF44 /* MXGameHeadView.xib in Resources */,
 				B1D0245C1DC3B475004EEA35 /* Live.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +589,7 @@
 				B13F06551DC4EA2100A0A1A1 /* MXRecommendViewModel.swift in Sources */,
 				B1D024531DC3B475004EEA35 /* MXGameViewController.swift in Sources */,
 				B1D024581DC3B475004EEA35 /* CollectionNormalCell.swift in Sources */,
+				B1FBAB6C1DF414BA0056EF44 /* MXGameViewModel.swift in Sources */,
 				B1D0245E1DC3B475004EEA35 /* MXLiveViewController.swift in Sources */,
 				B1D0245A1DC3B475004EEA35 /* CollectionPrettyCell.swift in Sources */,
 				B1D024511DC3B475004EEA35 /* MXAmuseViewController.swift in Sources */,
@@ -595,6 +606,7 @@
 				B13F06581DC4EABB00A0A1A1 /* MXAnchorGroup.swift in Sources */,
 				19E8AAD01DF2CB4900AE5290 /* MXGameCollectionCell.swift in Sources */,
 				19E8AACD1DF2C8F300AE5290 /* MXGameCollectionView.swift in Sources */,
+				B1FBAB6E1DF451260056EF44 /* MXGameHeadView.swift in Sources */,
 				B1D0245F1DC3B475004EEA35 /* MXMainViewController.swift in Sources */,
 				B1D024521DC3B475004EEA35 /* MXFunnyViewController.swift in Sources */,
 				19572F3B1DF14EF500E342A7 /* MXConstant.swift in Sources */,
