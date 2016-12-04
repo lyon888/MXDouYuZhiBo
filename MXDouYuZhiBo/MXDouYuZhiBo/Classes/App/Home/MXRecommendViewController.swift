@@ -12,11 +12,11 @@ private let kNormalCellID = "kNormalCellID"
 private let kHeaderViewID = "kHeaderViewID"
 private let kPrettyCellID = "kPrettyCellID"
 
-private let kItemMargin : CGFloat = 10
-private let kItemW : CGFloat = (kScreenWidth - 3 * kItemMargin) / 2
-private let kNormalItemH : CGFloat = kItemW * 3 / 4
-private let kPrettyItemH : CGFloat = kItemW * 4 / 3
-private let kHeaderViewH : CGFloat = 50
+private let kItemMargin : CGFloat   = 10
+private let kItemW : CGFloat        = (kScreenWidth - 3 * kItemMargin) / 2
+private let kNormalItemH : CGFloat  = kItemW * 3 / 4
+private let kPrettyItemH : CGFloat  = kItemW * 4 / 3
+private let kHeaderViewH : CGFloat  = 50
 
 class MXRecommendViewController: UIViewController {
     
@@ -38,7 +38,7 @@ class MXRecommendViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.delegate = self
-        //        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
