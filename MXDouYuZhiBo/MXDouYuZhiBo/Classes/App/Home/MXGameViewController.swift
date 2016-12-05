@@ -10,8 +10,7 @@ import UIKit
 
 let kGameHeadView : String = "kGameHeadView"
 
-private let kItemMargin  : CGFloat = 10
-private let kItemW       : CGFloat = kDeviceWidth / 3//(kDeviceWidth - 3 * kItemMargin) / 2
+private let kItemW       : CGFloat = kDeviceWidth / 3
 private let kNormalItemH : CGFloat = kItemW + 30
 private let kHeaderViewH : CGFloat = 35
 private let kGameViewH   : CGFloat = 90
@@ -20,11 +19,10 @@ class MXGameViewController: UIViewController {
 
     // MARK: - 属性
     fileprivate lazy var gameViewModel  : MXGameViewModel       = MXGameViewModel()
-    fileprivate lazy var recommendVM    : MXRecommendViewModel  = MXRecommendViewModel()
     
     // MARK: - Lazy
     fileprivate lazy var gameHeadView : MXGameHeadView = {[weak self] in
-        let gameHeadViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH-kHeaderViewH-kGlobalMargin), size: CGSize(width: kDeviceWidth, height: kHeaderViewH))
+        let gameHeadViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH-kHeaderViewH-kItemMargin), size: CGSize(width: kDeviceWidth, height: kHeaderViewH))
         let gameHeadView = MXGameHeadView.nibView()
         gameHeadView.frame = gameHeadViewFrame
         gameHeadView.lineViewBgColor = UIColor.orange
@@ -33,7 +31,7 @@ class MXGameViewController: UIViewController {
         }()
     
     fileprivate lazy var gameCollectionView : MXGameCollectionView = {[weak self] in
-        let gameCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH-kGlobalMargin), size: CGSize(width: kDeviceWidth, height: kGameViewH))
+        let gameCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH-kItemMargin), size: CGSize(width: kDeviceWidth, height: kGameViewH))
         let gameCollectionView = MXGameCollectionView(frame: gameCollectionViewFrame)
         gameCollectionView.backgroundColor = UIColor.white
         return gameCollectionView
@@ -46,14 +44,12 @@ class MXGameViewController: UIViewController {
         layout.minimumLineSpacing       = 0
         layout.minimumInteritemSpacing  = 0//kItemMargin
         layout.headerReferenceSize = CGSize(width: kDeviceWidth, height: kHeaderViewH)
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: kItemMargin, bottom: 0, right: kItemMargin)
         
         // 2.创建UICollectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = kGlobalBgColor
         collectionView.dataSource   = self
-//        collectionView.delegate     = self
-        collectionView.contentInset = UIEdgeInsets(top: kGameViewH+kHeaderViewH+kGlobalMargin, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kGameViewH+kHeaderViewH+kItemMargin, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
         
         collectionView.register(UINib(nibName: "MXGameCollectionCell", bundle: nil), forCellWithReuseIdentifier: kGameCollectionCell)
         collectionView.register(UINib(nibName: "MXGameHeadView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kGameHeadView)
@@ -79,15 +75,9 @@ extension MXGameViewController{
         
     }
     func setupRequestData(){
-        recommendVM.requestData {
-            var groups = self.recommendVM.anchorGroups
-            groups.removeFirst()
-            groups.removeFirst()
-            self.gameCollectionView.anchorGroups = groups
-        }
-        
         gameViewModel.requestData{
             self.collectionView.reloadData()
+            self.gameCollectionView.anchorGroups = Array(self.gameViewModel.games[0..<10])
         }
     }
 }

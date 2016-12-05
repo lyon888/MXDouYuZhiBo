@@ -27,10 +27,10 @@ extension MXNetWorkTool{
 
         // 2.发送网络请求
         Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (response) in
-            MXPrint(message: response)
+//            MXPrint(message: response)
             // 3.获取结果
             guard let result = response.result.value else {
-                MXPrint(message: response.result.error!)
+//                MXPrint(message: response.result.error!)
                 return
             }
             

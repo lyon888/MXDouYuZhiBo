@@ -17,7 +17,7 @@ let kDeviceHeight   = UIScreen.main.bounds.height
 let kStatusBarHeight        : CGFloat = 20
 let kNavigationBarHeight    : CGFloat = 44
 let kTabbarHeight           : CGFloat = 49
-let kGlobalMargin           : CGFloat = 10
+let kItemMargin             : CGFloat = 10
 
 ///-----------------------------------------------------------------------------
 /// @name 颜色 Color
