@@ -23,10 +23,9 @@ class MXAmuseViewController: UIViewController {
     fileprivate lazy var amuseViewModel : MXAmuseViewModel = MXAmuseViewModel()
     
     fileprivate lazy var amuseTopView : MXAmuseTopView = {[weak self] in
-        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kTopViewH), size: CGSize(width: kDeviceWidth, height: kTopViewH))
+        let amuseTopViewFrame = CGRect(origin: CGPoint(x: 0, y: -kTopViewH), size: CGSize(width: kDeviceWidth, height: kTopViewH))
         let amuseTopView = MXAmuseTopView.nibView()
-        amuseTopView.frame = cycleCollectionViewFrame
-        //        cycleCollectionView.delegate = self
+        amuseTopView.frame = amuseTopViewFrame
         return amuseTopView
         }()
     
