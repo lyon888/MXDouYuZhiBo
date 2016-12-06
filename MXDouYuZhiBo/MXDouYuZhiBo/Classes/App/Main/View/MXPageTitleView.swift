@@ -71,8 +71,8 @@ extension MXPageTitleView {
         let oldLabel = titleLabels[currentIndex]
 
         // 3.切换文字的颜色
-        currentLabel.textColor = UIColor.red//(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
-        oldLabel.textColor = UIColor.orange//(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
+        currentLabel.textColor = UIColor.orange//(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
+        oldLabel.textColor = UIColor.black//(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
 
         // 4.保存最新Label的下标值
         currentIndex = currentLabel.tag
@@ -105,7 +105,7 @@ extension MXPageTitleView{
             label.text = title
             label.tag = index
             label.font = UIFont.systemFont(ofSize: 16.0)
-            label.textColor = UIColor.orange
+            label.textColor = UIColor.black
             label.textAlignment = .center
             scrollView.addSubview(label);
             titleLabels.append(label)

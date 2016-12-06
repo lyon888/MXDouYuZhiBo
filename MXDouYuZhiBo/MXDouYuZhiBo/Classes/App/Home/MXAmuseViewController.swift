@@ -15,26 +15,19 @@ private let kItemW       : CGFloat = (kDeviceWidth - 3 * kItemMargin) / 2
 private let kNormalItemH : CGFloat = kItemW * 3 / 4
 private let kPrettyItemH : CGFloat = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50
-private let kCycleViewH  : CGFloat = 150
-private let kGameViewH   : CGFloat = 90
+private let kTopViewH    : CGFloat = 200
 
 class MXAmuseViewController: UIViewController {
     
     // MARK:- 懒加载属性
     fileprivate lazy var amuseViewModel : MXAmuseViewModel = MXAmuseViewModel()
     
-    fileprivate lazy var cycleCollectionView : MXCycleCollectionView = {[weak self] in
-        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kCycleViewH-kGameViewH), size: CGSize(width: kDeviceWidth, height: kCycleViewH))
-        let cycleCollectionView = MXCycleCollectionView(frame: cycleCollectionViewFrame)
+    fileprivate lazy var amuseTopView : MXAmuseTopView = {[weak self] in
+        let cycleCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kTopViewH), size: CGSize(width: kDeviceWidth, height: kTopViewH))
+        let amuseTopView = MXAmuseTopView.nibView()
+        amuseTopView.frame = cycleCollectionViewFrame
         //        cycleCollectionView.delegate = self
-        return cycleCollectionView
-        }()
-    
-    fileprivate lazy var gameCollectionView : MXGameCollectionView = {[weak self] in
-        let gameCollectionViewFrame = CGRect(origin: CGPoint(x: 0, y: -kGameViewH), size: CGSize(width: kDeviceWidth, height: kGameViewH))
-        let gameCollectionView = MXGameCollectionView(frame: gameCollectionViewFrame)
-        gameCollectionView.backgroundColor = UIColor.white
-        return gameCollectionView
+        return amuseTopView
         }()
     
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
@@ -51,7 +44,7 @@ class MXAmuseViewController: UIViewController {
         
         collectionView.dataSource   = self
         collectionView.delegate     = self
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH+kGameViewH, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kTopViewH, left: 0, bottom: kTabbarHeight + kNavigationBarHeight + kStatusBarHeight + 40, right: 0)
         
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         
@@ -73,8 +66,7 @@ class MXAmuseViewController: UIViewController {
 extension MXAmuseViewController {
     fileprivate func setupUI(){
         view.addSubview(collectionView)
-        collectionView.addSubview(cycleCollectionView)
-        collectionView.addSubview(gameCollectionView)
+        collectionView.addSubview(amuseTopView)
     }
 }
 

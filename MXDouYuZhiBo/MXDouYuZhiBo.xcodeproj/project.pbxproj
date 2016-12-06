@@ -48,6 +48,11 @@
 		B1D024621DC3B475004EEA35 /* MXProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0244A1DC3B475004EEA35 /* MXProfileViewController.swift */; };
 		B1D024631DC3B475004EEA35 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D0244B1DC3B475004EEA35 /* Profile.storyboard */; };
 		B1D024681DC3B628004EEA35 /* MXNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D024671DC3B628004EEA35 /* MXNetWorkTool.swift */; };
+		B1F2416F1DF5B2650015B85C /* MXAmuseTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2416E1DF5B2650015B85C /* MXAmuseTopView.swift */; };
+		B1F241711DF5B2730015B85C /* MXAmuseTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1F241701DF5B2730015B85C /* MXAmuseTopView.xib */; };
+		B1F2417D1DF5BD720015B85C /* UIView-MXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2417C1DF5BD720015B85C /* UIView-MXExtension.swift */; };
+		B1F241801DF5C42E0015B85C /* MXCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2417E1DF5C42E0015B85C /* MXCollectionViewCell.swift */; };
+		B1F241811DF5C42E0015B85C /* MXCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1F2417F1DF5C42E0015B85C /* MXCollectionViewCell.xib */; };
 		B1FBAB6C1DF414BA0056EF44 /* MXGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBAB6B1DF414BA0056EF44 /* MXGameViewModel.swift */; };
 		B1FBAB6E1DF451260056EF44 /* MXGameHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */; };
 		B1FBAB701DF4512F0056EF44 /* MXGameHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */; };
@@ -121,6 +126,11 @@
 		B1D0244A1DC3B475004EEA35 /* MXProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXProfileViewController.swift; sourceTree = "<group>"; };
 		B1D0244B1DC3B475004EEA35 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B1D024671DC3B628004EEA35 /* MXNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXNetWorkTool.swift; sourceTree = "<group>"; };
+		B1F2416E1DF5B2650015B85C /* MXAmuseTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAmuseTopView.swift; sourceTree = "<group>"; };
+		B1F241701DF5B2730015B85C /* MXAmuseTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXAmuseTopView.xib; sourceTree = "<group>"; };
+		B1F2417C1DF5BD720015B85C /* UIView-MXExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-MXExtension.swift"; sourceTree = "<group>"; };
+		B1F2417E1DF5C42E0015B85C /* MXCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1F2417F1DF5C42E0015B85C /* MXCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1FBAB6B1DF414BA0056EF44 /* MXGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameViewModel.swift; sourceTree = "<group>"; };
 		B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXGameHeadView.swift; sourceTree = "<group>"; };
 		B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXGameHeadView.xib; sourceTree = "<group>"; };
@@ -252,6 +262,7 @@
 		B102DB081DC1B80400A3B0F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1F241721DF5B4560015B85C /* Expand */,
 				19572F3C1DF14FC300E342A7 /* View */,
 				19572F391DF14EF500E342A7 /* Constant */,
 				B1D0242D1DC3B475004EEA35 /* App */,
@@ -340,6 +351,10 @@
 				19E8AACF1DF2CB4900AE5290 /* MXGameCollectionCell.xib */,
 				B1FBAB6D1DF451260056EF44 /* MXGameHeadView.swift */,
 				B1FBAB6F1DF4512F0056EF44 /* MXGameHeadView.xib */,
+				B1F2416E1DF5B2650015B85C /* MXAmuseTopView.swift */,
+				B1F241701DF5B2730015B85C /* MXAmuseTopView.xib */,
+				B1F2417E1DF5C42E0015B85C /* MXCollectionViewCell.swift */,
+				B1F2417F1DF5C42E0015B85C /* MXCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +401,30 @@
 				B1D024671DC3B628004EEA35 /* MXNetWorkTool.swift */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		B1F241721DF5B4560015B85C /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				B1F241751DF5B4F10015B85C /* Extension */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		B1F241751DF5B4F10015B85C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1F241761DF5B4F10015B85C /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B1F241761DF5B4F10015B85C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B1F2417C1DF5BD720015B85C /* UIView-MXExtension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,13 +494,13 @@
 			attributes = {
 				CLASSPREFIX = MX;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = lyoniOS;
 				TargetAttributes = {
 					B102DAD61DC1B63F00A3B0F3 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = SF37794JEV;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = 34F29W6ARY;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					B102DAEA1DC1B64000A3B0F3 = {
@@ -511,6 +550,7 @@
 				B1D024571DC3B475004EEA35 /* CollectionHeaderView.xib in Resources */,
 				19E8AAD11DF2CB4900AE5290 /* MXGameCollectionCell.xib in Resources */,
 				B1D024501DC3B475004EEA35 /* Home.storyboard in Resources */,
+				B1F241811DF5C42E0015B85C /* MXCollectionViewCell.xib in Resources */,
 				B1D0244D1DC3B475004EEA35 /* Follow.storyboard in Resources */,
 				B1D024631DC3B475004EEA35 /* Profile.storyboard in Resources */,
 				19572F4A1DF1683F00E342A7 /* MXCycleCollectionViewCell.xib in Resources */,
@@ -518,6 +558,7 @@
 				B1D0245B1DC3B475004EEA35 /* CollectionPrettyCell.xib in Resources */,
 				B1FBAB701DF4512F0056EF44 /* MXGameHeadView.xib in Resources */,
 				B1D0245C1DC3B475004EEA35 /* Live.storyboard in Resources */,
+				B1F241711DF5B2730015B85C /* MXAmuseTopView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D024561DC3B475004EEA35 /* CollectionHeaderView.swift in Sources */,
+				B1F241801DF5C42E0015B85C /* MXCollectionViewCell.swift in Sources */,
 				197D42F41DF5372E004ED94B /* MXAmuseViewModel.swift in Sources */,
 				B1D024551DC3B475004EEA35 /* MXRecommendViewController.swift in Sources */,
 				B13F06551DC4EA2100A0A1A1 /* MXRecommendViewModel.swift in Sources */,
@@ -609,7 +651,9 @@
 				B1D024541DC3B475004EEA35 /* MXHomeViewController.swift in Sources */,
 				B1D024611DC3B475004EEA35 /* MXPageTitleView.swift in Sources */,
 				B1D024621DC3B475004EEA35 /* MXProfileViewController.swift in Sources */,
+				B1F2416F1DF5B2650015B85C /* MXAmuseTopView.swift in Sources */,
 				19572F491DF1683F00E342A7 /* MXCycleCollectionViewCell.swift in Sources */,
+				B1F2417D1DF5BD720015B85C /* UIView-MXExtension.swift in Sources */,
 				B13F06581DC4EABB00A0A1A1 /* MXAnchorGroup.swift in Sources */,
 				19E8AAD01DF2CB4900AE5290 /* MXGameCollectionCell.swift in Sources */,
 				19E8AACD1DF2C8F300AE5290 /* MXGameCollectionView.swift in Sources */,
@@ -691,6 +735,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -741,6 +786,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -773,13 +819,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = SF37794JEV;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 34F29W6ARY;
 				INFOPLIST_FILE = MXDouYuZhiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lyoniOS.MXDouYuZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -790,13 +840,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = SF37794JEV;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 34F29W6ARY;
 				INFOPLIST_FILE = MXDouYuZhiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lyoniOS.MXDouYuZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
