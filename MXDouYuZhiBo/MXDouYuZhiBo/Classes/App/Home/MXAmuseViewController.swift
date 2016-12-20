@@ -74,6 +74,11 @@ extension MXAmuseViewController {
     fileprivate func requestDatas(){
         amuseViewModel.requestAmuseData {
             self.collectionView.reloadData()
+            
+            // 2.2.调整数据
+            var tempGroups = self.amuseViewModel.anchorGroups
+            tempGroups.removeFirst()
+            self.amuseTopView.anchorGroups = tempGroups
         }
     }
 }
